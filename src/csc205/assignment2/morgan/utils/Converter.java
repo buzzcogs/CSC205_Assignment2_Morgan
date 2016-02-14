@@ -39,10 +39,17 @@ public class Converter
     // seperate sign exponent and significand fields
      // format for 32 bit is 
     // sign bit(1) exponent bits (8) significand bits (23)
+    //  bias of 127
     // format for 64 bit is 
     // sign bit (1) exponent bits (11) significand bits (52)
-    // add 1 back to the significand and omit trailing zeroes
-    // extract the exponent 
+    // bias of 1023
+    // extract the significand and add 1 back to the significand 
+    // and omit trailing zeroes
+    // extract the exponent from the exponent field and subtract the bias
+    // to obain the actual exponent 
+    // de-normalize the number move the binary point so the exponent becomes 0
+    // convert the binary to decimal 
+    // set the sign from the sign bit
     public static double stringToDouble(String strVal)
     {
         double value = Double.parseDouble(strVal);
@@ -120,6 +127,38 @@ public class Converter
         //char [] retVal = {'F', 'F', 'F'};
         char [] retVal = new char [16];
         if (dblPrecision.length != 64)
+        {
+           // retVal = {'I', 'N', 'V', 'A', 'L', 'I', 'D'};
+        }
+        else
+        {
+           //retVal = {'F', 'F', 'F'}; 
+        }
+        return retVal;
+    }
+    
+       
+    
+    public static int [] HexToIEE754DoublePrecisionArray ( char [] hexArray)
+    {
+        //char [] retVal = {'F', 'F', 'F'};
+        int [] retVal = new int [64];
+        if (hexArray.length != 16)
+        {
+           // retVal = {'I', 'N', 'V', 'A', 'L', 'I', 'D'};
+        }
+        else
+        {
+           //retVal = {'F', 'F', 'F'}; 
+        }
+        return retVal;
+    }
+    
+    public static int [] HexToIEE754SinglePrecisionArray ( char [] hexArray)
+    {
+        //char [] retVal = {'F', 'F', 'F'};
+        int [] retVal = new int [32];
+        if (hexArray.length != 8)
         {
            // retVal = {'I', 'N', 'V', 'A', 'L', 'I', 'D'};
         }
