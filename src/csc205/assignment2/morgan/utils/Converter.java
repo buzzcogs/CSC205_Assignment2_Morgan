@@ -124,15 +124,15 @@ public class Converter
     
     public static char [] IEEE754DoublePrecisionToHexArray ( int [] dblPrecision)
     {
-        //char [] retVal = {'F', 'F', 'F'};
         char [] retVal = new char [16];
         if (dblPrecision.length != 64)
         {
-           // retVal = {'I', 'N', 'V', 'A', 'L', 'I', 'D'};
+            String invalid = "INVALID VALUE!!!";
+            retVal = invalid.toCharArray();
         }
         else
         {
-           //retVal = {'F', 'F', 'F'}; 
+            
         }
         return retVal;
     }
