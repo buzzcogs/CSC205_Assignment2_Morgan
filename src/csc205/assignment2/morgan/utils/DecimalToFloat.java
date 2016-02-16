@@ -24,13 +24,13 @@ public class DecimalToFloat
          return retVal;
      }
      
-     public static String convertSPBinaryIntsToString()
+     public static String convertSPBinaryIntsToString(int spVal)
      {
          
          return "11001100101010101010110101010101";
      }
      
-     public static String convertDPBinaryIntsToString()
+     public static String convertDPBinaryIntsToString(long dpVal)
      {
          
          return "1100110010101010101011010101010111001100101010101010110101010101";
@@ -44,5 +44,26 @@ public class DecimalToFloat
      public static String convertSPBinaryIntstoHexString()
      {
          return "0xef2d2a23";
+     }
+     
+     public static int convertSPToBinaryInts(float floatVal)
+     {
+         floatVal=-89.4f;
+         int binRetVal = Float.floatToRawIntBits(floatVal);
+         return binRetVal;
+     }
+     
+     public static long convertDPToBinaryInts(double doubleVal)
+     {
+         doubleVal = -4062.0029d;
+         long binRetVal = Double.doubleToRawLongBits(doubleVal);
+         return binRetVal;
+     }
+     
+      public static double convertBinaryIntsToDouble(long binIntVal)
+     {
+         binIntVal = 0b1010000101000101101000010100010110100001010001011010000101000101L;
+         double doubleRetVal = Double.longBitsToDouble(binIntVal);
+         return doubleRetVal;
      }
 }
