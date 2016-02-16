@@ -66,4 +66,32 @@ public class DecimalToFloat
          double doubleRetVal = Double.longBitsToDouble(binIntVal);
          return doubleRetVal;
      }
+      
+      public static String convertSPToHexString(int binIntVal)
+      {
+          binIntVal = 0b01000010100010110100001010001011;
+          String hexVal = Integer.toHexString(binIntVal);
+          return hexVal;
+      }
+      
+      public static String convertDPToHexString(long binIntVal)
+      {
+          binIntVal = 0b1010000101000101101000010100010110100001010001011010000101000101L;
+          String hexVal = Long.toHexString(binIntVal);
+          return hexVal;
+      }
+      
+      public static long convertStringToDP(String dpStrVal)
+      {
+          dpStrVal = "1010000101000101101000010100010110100001010001011010000101000101";
+          long retVal = Long.parseLong(dpStrVal, 2);
+          return retVal;
+      }
+      
+      public static long convertStringToSP(String spStrVal)
+      {
+          spStrVal = "1010000101000101101000010100010110100001010001011010000101000101";
+          int retVal = Integer.parseInt(spStrVal, 2);
+          return retVal;
+      }
 }
