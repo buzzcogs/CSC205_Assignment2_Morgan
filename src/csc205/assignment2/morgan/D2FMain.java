@@ -5,6 +5,7 @@
  */
 
 package csc205.assignment2.morgan;
+import csc205.assignment2.morgan.gui.DecimalToFloatUI;
 
 /**
  *
@@ -12,5 +13,11 @@ package csc205.assignment2.morgan;
  */
 public class D2FMain 
 {
+    public static void main(String args[])
+    {
+       DecimalToFloatUI myDecimalToFloatUI = new DecimalToFloatUI();
+       myDecimalToFloatUI.setVisible(true);
+      
+    }
 
 }
