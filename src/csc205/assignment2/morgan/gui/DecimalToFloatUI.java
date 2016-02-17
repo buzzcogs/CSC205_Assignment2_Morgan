@@ -21,7 +21,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
     public DecimalToFloatUI()
     {
         initComponents();
-        ImageIcon image = new ImageIcon("Compass-Rose-BW-300px.png");
+        ImageIcon image = new ImageIcon("/images/Compass-Rose-BW-300px.png");
         this.setIconImage(image.getImage());
     }
 
