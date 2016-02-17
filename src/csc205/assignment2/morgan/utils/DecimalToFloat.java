@@ -132,6 +132,12 @@ public class DecimalToFloat
           return retVal;
       }
       
+       public static String convertDoubleToString(double decimalVal)
+      {
+          String retVal = Double.toString(decimalVal);
+          return retVal;
+      }
+      
       public static void main(String args [])
       {
         String decVal = "-3.78";

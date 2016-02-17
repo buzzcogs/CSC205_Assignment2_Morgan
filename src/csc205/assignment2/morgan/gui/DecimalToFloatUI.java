@@ -155,6 +155,13 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         });
 
         dpFloatToDecimal.setText("FloatToDecimal");
+        dpFloatToDecimal.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                dpFloatToDecimalActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Decimal");
 
@@ -170,14 +177,15 @@ public class DecimalToFloatUI extends javax.swing.JFrame
                 .addGap(47, 47, 47)
                 .addGroup(dpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel5)
                     .addComponent(jLabel4)
                     .addGroup(dpPanelLayout.createSequentialGroup()
                         .addComponent(dpDecimalToFloatButton)
                         .addGap(63, 63, 63)
                         .addComponent(dpFloatToDecimal))
-                    .addComponent(dpDecimalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dpHexTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dpHexTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(dpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(dpDecimalTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(190, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpPanelLayout.createSequentialGroup()
                 .addContainerGap()
@@ -211,7 +219,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DecimalToFloatTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+            .addComponent(DecimalToFloatTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,6 +296,24 @@ public class DecimalToFloatUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(null,  exp.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_dpDecimalToFloatButtonActionPerformed
+
+    private void dpFloatToDecimalActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_dpFloatToDecimalActionPerformed
+    {//GEN-HEADEREND:event_dpFloatToDecimalActionPerformed
+              try
+        {
+            String binaryStr =  dpTextField.getText();
+            long binaryDigits = DecimalToFloat.convertStringToDP(binaryStr);
+            double doubleVal = DecimalToFloat.convertDPToDouble(binaryDigits);
+            String doubleStr = DecimalToFloat.convertDoubleToString(doubleVal);
+            dpDecimalTextField.setText(doubleStr);
+            String hexStr = DecimalToFloat.convertDPToHexString(binaryDigits);
+            dpHexTextField.setText(hexStr);
+        }
+        catch (Exception exp)
+        {
+            JOptionPane.showMessageDialog(null,  exp.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_dpFloatToDecimalActionPerformed
 
     /**
      * @param args the command line arguments
