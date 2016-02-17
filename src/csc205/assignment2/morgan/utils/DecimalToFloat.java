@@ -44,8 +44,20 @@ public class DecimalToFloat
      
      public static String convertDPBinaryIntsToString(long dpVal)
      {
-         String retVal = Long.toString(dpVal, 2);
-         return retVal;
+        String strBinary = Long.toBinaryString(dpVal);
+        int zeropad = 0;
+        if ( strBinary.length() < 32)
+        {
+            zeropad = 32 - strBinary.length();
+        }
+        String zeroStr = "";
+        for (int i = 0; i < zeropad; i++)
+        {
+            zeroStr = zeroStr +"0";
+        }
+         //Integer.toString(spVal, 2)
+         String retVal = zeroStr+strBinary;
+         return retVal;         
      }
      
      public static String convertDPBinaryIntstoHexString()
