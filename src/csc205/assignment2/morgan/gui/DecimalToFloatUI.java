@@ -93,6 +93,13 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         jLabel3.setText("Hexidecimal");
 
         spClearButton.setText("Clear");
+        spClearButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                spClearButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout spPanelLayout = new javax.swing.GroupLayout(spPanel);
         spPanel.setLayout(spPanelLayout);
@@ -177,6 +184,13 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         jLabel6.setText("Hexidecimal");
 
         dpClearButton.setText("Clear");
+        dpClearButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                dpClearButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout dpPanelLayout = new javax.swing.GroupLayout(dpPanel);
         dpPanel.setLayout(dpPanelLayout);
@@ -329,6 +343,20 @@ public class DecimalToFloatUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(null,  exp.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_dpFloatToDecimalActionPerformed
+
+    private void spClearButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_spClearButtonActionPerformed
+    {//GEN-HEADEREND:event_spClearButtonActionPerformed
+       spTextField.setText("");
+       spHexTextField.setText("");
+       spDecimalTextField.setText("");
+    }//GEN-LAST:event_spClearButtonActionPerformed
+
+    private void dpClearButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_dpClearButtonActionPerformed
+    {//GEN-HEADEREND:event_dpClearButtonActionPerformed
+        dpTextField.setText("");
+        dpHexTextField.setText("");
+        dpDecimalTextField.setText("");
+    }//GEN-LAST:event_dpClearButtonActionPerformed
 
     /**
      * @param args the command line arguments
