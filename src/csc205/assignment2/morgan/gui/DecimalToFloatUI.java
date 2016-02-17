@@ -5,6 +5,7 @@
  */
 package csc205.assignment2.morgan.gui;
 import csc205.assignment2.morgan.utils.DecimalToFloat;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -21,8 +22,9 @@ public class DecimalToFloatUI extends javax.swing.JFrame
     public DecimalToFloatUI()
     {
         initComponents();
-        ImageIcon image = new ImageIcon("/images/Compass-Rose-BW-300px.png");
-        this.setIconImage(image.getImage());
+       // ImageIcon image = new ImageIcon("/images/Compass-Rose-BW-300px.png");
+       // this.setIconImage(image.getImage());
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage("/images/Compass-Rose-BW-300px.png"));
     }
 
     /**
