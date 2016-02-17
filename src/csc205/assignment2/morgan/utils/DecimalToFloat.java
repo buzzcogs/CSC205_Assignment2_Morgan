@@ -32,8 +32,8 @@ public class DecimalToFloat
      
      public static String convertDPBinaryIntsToString(long dpVal)
      {
-         
-         return "1100110010101010101011010101010111001100101010101010110101010101";
+         String retVal = Long.toString(dpVal, 2);
+         return retVal;
      }
      
      public static String convertDPBinaryIntstoHexString()
@@ -54,14 +54,12 @@ public class DecimalToFloat
      
      public static long convertDPToBinaryInts(double doubleVal)
      {
-         doubleVal = -4062.0029d;
          long binRetVal = Double.doubleToRawLongBits(doubleVal);
          return binRetVal;
      }
      
       public static double convertBinaryIntsToDouble(long binIntVal)
      {
-         //binIntVal = 0b1010000101000101101000010100010110100001010001011010000101000101L;
          double doubleRetVal = Double.longBitsToDouble(binIntVal);
          return doubleRetVal;
      }
@@ -74,22 +72,42 @@ public class DecimalToFloat
       
       public static String convertDPToHexString(long binIntVal)
       {
-          binIntVal = 0b1010000101000101101000010100010110100001010001011010000101000101L;
           String hexVal = Long.toHexString(binIntVal);
           return hexVal;
       }
       
       public static long convertStringToDP(String dpStrVal)
       {
-          dpStrVal = "1010000101000101101000010100010110100001010001011010000101000101";
           long retVal = Long.parseLong(dpStrVal, 2);
           return retVal;
       }
       
-      public static long convertStringToSP(String spStrVal)
+      public static int convertStringToSP(String spStrVal)
       {
-          spStrVal = "1010000101000101101000010100010110100001010001011010000101000101";
           int retVal = Integer.parseInt(spStrVal, 2);
           return retVal;
+      }
+      
+      public static float convertSPToFloat(int binaryDigits)
+      {
+          float floatVal = Float.intBitsToFloat(binaryDigits);
+          return floatVal;
+      }
+      
+      public static double convertDPToDouble(long binaryDigits)
+      {
+          double doubleVal = Double.longBitsToDouble(binaryDigits);
+          return doubleVal;
+      }
+      
+      public static void main(String args [])
+      {
+        String decVal = "3.78";
+        float floatVal = DecimalToFloat.convertStringToFloat(decVal);
+        System.out.println("float val: "+floatVal);
+        int binaryDigits = DecimalToFloat.convertSPToBinaryInts(floatVal);
+        System.out.println("binary digits: "+binaryDigits);
+        String binDigStr = DecimalToFloat.convertSPBinaryIntsToString(binaryDigits);
+        String hexStr = DecimalToFloat.convertSPToHexString(binaryDigits);            
       }
 }
