@@ -107,7 +107,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
                     .addComponent(spDecimalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(spTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(spHexTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
         spPanelLayout.setVerticalGroup(
             spPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,6 +146,13 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         dpHexTextField.setEditable(false);
 
         dpDecimalToFloatButton.setText("DecimalToFloat");
+        dpDecimalToFloatButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                dpDecimalToFloatButtonActionPerformed(evt);
+            }
+        });
 
         dpFloatToDecimal.setText("FloatToDecimal");
 
@@ -170,9 +177,11 @@ public class DecimalToFloatUI extends javax.swing.JFrame
                         .addGap(63, 63, 63)
                         .addComponent(dpFloatToDecimal))
                     .addComponent(dpDecimalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dpTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dpHexTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(190, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dpTextField))
         );
         dpPanelLayout.setVerticalGroup(
             dpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,10 +211,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(DecimalToFloatTabbedPane)
-                .addContainerGap())
+            .addComponent(DecimalToFloatTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,6 +270,24 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         }
         
     }//GEN-LAST:event_spFloatToDecButtonActionPerformed
+
+    private void dpDecimalToFloatButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_dpDecimalToFloatButtonActionPerformed
+    {//GEN-HEADEREND:event_dpDecimalToFloatButtonActionPerformed
+        try
+        {
+            String decVal = dpDecimalTextField.getText();
+            double doubleVal = DecimalToFloat.convertStringToDouble(decVal);
+            long binaryDigits = DecimalToFloat.convertDPToBinaryInts(doubleVal);
+            String binDigStr = DecimalToFloat.convertDPBinaryIntsToString(binaryDigits);
+            dpTextField.setText(binDigStr);
+            String hexStr = DecimalToFloat.convertDPToHexString(binaryDigits);
+            dpHexTextField.setText(hexStr);
+        }
+        catch (Exception exp)
+        {
+            JOptionPane.showMessageDialog(null,  exp.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_dpDecimalToFloatButtonActionPerformed
 
     /**
      * @param args the command line arguments

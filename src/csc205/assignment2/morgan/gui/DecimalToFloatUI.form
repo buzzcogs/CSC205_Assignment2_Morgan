@@ -24,11 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="DecimalToFloatTabbedPane" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="DecimalToFloatTabbedPane" alignment="1" pref="515" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -76,7 +72,7 @@
                           <Component id="spTextField" min="-2" pref="289" max="-2" attributes="0"/>
                           <Component id="spHexTextField" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace pref="174" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -179,10 +175,13 @@
                               <Component id="dpFloatToDecimal" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="dpDecimalTextField" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="dpTextField" alignment="0" min="-2" pref="289" max="-2" attributes="0"/>
                           <Component id="dpHexTextField" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace pref="190" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="dpTextField" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -228,6 +227,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="DecimalToFloat"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dpDecimalToFloatButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="dpFloatToDecimal">
               <Properties>
