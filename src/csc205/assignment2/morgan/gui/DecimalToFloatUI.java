@@ -42,6 +42,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        spClearButton = new javax.swing.JButton();
         dpPanel = new javax.swing.JPanel();
         dpDecimalTextField = new javax.swing.JTextField();
         dpTextField = new javax.swing.JTextField();
@@ -51,6 +52,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        dpClearButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CSC 205 Binary to Float Converter");
@@ -90,6 +92,8 @@ public class DecimalToFloatUI extends javax.swing.JFrame
 
         jLabel3.setText("Hexidecimal");
 
+        spClearButton.setText("Clear");
+
         javax.swing.GroupLayout spPanelLayout = new javax.swing.GroupLayout(spPanel);
         spPanel.setLayout(spPanelLayout);
         spPanelLayout.setHorizontalGroup(
@@ -103,11 +107,13 @@ public class DecimalToFloatUI extends javax.swing.JFrame
                     .addGroup(spPanelLayout.createSequentialGroup()
                         .addComponent(spDecToFloatButton)
                         .addGap(63, 63, 63)
-                        .addComponent(spFloatToDecButton))
+                        .addComponent(spFloatToDecButton)
+                        .addGap(51, 51, 51)
+                        .addComponent(spClearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(spDecimalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(spTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(spHexTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         spPanelLayout.setVerticalGroup(
             spPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +133,8 @@ public class DecimalToFloatUI extends javax.swing.JFrame
                 .addGap(31, 31, 31)
                 .addGroup(spPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(spDecToFloatButton)
-                    .addComponent(spFloatToDecButton))
+                    .addComponent(spFloatToDecButton)
+                    .addComponent(spClearButton))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -169,6 +176,8 @@ public class DecimalToFloatUI extends javax.swing.JFrame
 
         jLabel6.setText("Hexidecimal");
 
+        dpClearButton.setText("Clear");
+
         javax.swing.GroupLayout dpPanelLayout = new javax.swing.GroupLayout(dpPanel);
         dpPanel.setLayout(dpPanelLayout);
         dpPanelLayout.setHorizontalGroup(
@@ -176,17 +185,22 @@ public class DecimalToFloatUI extends javax.swing.JFrame
             .addGroup(dpPanelLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(dpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel4)
+                    .addGroup(dpPanelLayout.createSequentialGroup()
+                        .addGroup(dpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4)
+                            .addComponent(dpHexTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(dpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(dpDecimalTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap(317, Short.MAX_VALUE))
                     .addGroup(dpPanelLayout.createSequentialGroup()
                         .addComponent(dpDecimalToFloatButton)
                         .addGap(63, 63, 63)
-                        .addComponent(dpFloatToDecimal))
-                    .addComponent(dpHexTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(dpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(dpDecimalTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(190, Short.MAX_VALUE))
+                        .addComponent(dpFloatToDecimal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(dpClearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(dpTextField))
@@ -209,7 +223,8 @@ public class DecimalToFloatUI extends javax.swing.JFrame
                 .addGap(31, 31, 31)
                 .addGroup(dpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dpDecimalToFloatButton)
-                    .addComponent(dpFloatToDecimal))
+                    .addComponent(dpFloatToDecimal)
+                    .addComponent(dpClearButton))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -362,6 +377,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane DecimalToFloatTabbedPane;
+    private javax.swing.JButton dpClearButton;
     private javax.swing.JTextField dpDecimalTextField;
     private javax.swing.JButton dpDecimalToFloatButton;
     private javax.swing.JButton dpFloatToDecimal;
@@ -374,6 +390,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton spClearButton;
     private javax.swing.JButton spDecToFloatButton;
     private javax.swing.JTextField spDecimalTextField;
     private javax.swing.JButton spFloatToDecButton;

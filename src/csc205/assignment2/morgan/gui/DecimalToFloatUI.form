@@ -67,12 +67,14 @@
                               <Component id="spDecToFloatButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                               <Component id="spFloatToDecButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="spClearButton" min="-2" pref="103" max="-2" attributes="0"/>
                           </Group>
                           <Component id="spDecimalTextField" min="-2" pref="128" max="-2" attributes="0"/>
                           <Component id="spTextField" min="-2" pref="289" max="-2" attributes="0"/>
                           <Component id="spHexTextField" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="174" max="32767" attributes="0"/>
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -95,6 +97,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="spDecToFloatButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="spFloatToDecButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spClearButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
@@ -145,6 +148,11 @@
                 <Property name="text" type="java.lang.String" value="Hexidecimal"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="spClearButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clear"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="dpPanel">
@@ -166,20 +174,27 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="dpHexTextField" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="dpDecimalTextField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="317" max="32767" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="dpDecimalToFloatButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                               <Component id="dpFloatToDecimal" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="dpHexTextField" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="dpDecimalTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="dpClearButton" min="-2" pref="108" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="190" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -206,6 +221,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="dpDecimalToFloatButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="dpFloatToDecimal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dpClearButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
@@ -254,6 +270,11 @@
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hexidecimal"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="dpClearButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
             </Component>
           </SubComponents>
