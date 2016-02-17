@@ -26,8 +26,8 @@ public class DecimalToFloat
      
      public static String convertSPBinaryIntsToString(int spVal)
      {
-         
-         return "11001100101010101010110101010101";
+         String retVal = Integer.toString(spVal, 2);
+         return retVal;
      }
      
      public static String convertDPBinaryIntsToString(long dpVal)
@@ -61,14 +61,13 @@ public class DecimalToFloat
      
       public static double convertBinaryIntsToDouble(long binIntVal)
      {
-         binIntVal = 0b1010000101000101101000010100010110100001010001011010000101000101L;
+         //binIntVal = 0b1010000101000101101000010100010110100001010001011010000101000101L;
          double doubleRetVal = Double.longBitsToDouble(binIntVal);
          return doubleRetVal;
      }
       
       public static String convertSPToHexString(int binIntVal)
       {
-         // binIntVal = 0b01000010100010110100001010001011;
           String hexVal = Integer.toHexString(binIntVal);
           return hexVal;
       }

@@ -5,6 +5,7 @@
  */
 package csc205.assignment2.morgan.gui;
 import csc205.assignment2.morgan.utils.DecimalToFloat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -75,6 +76,13 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         });
 
         spFloatToDecButton.setText("FloatToDecimal");
+        spFloatToDecButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                spFloatToDecButtonActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Decimal");
 
@@ -231,13 +239,25 @@ public class DecimalToFloatUI extends javax.swing.JFrame
             spTextField.setText(binDigStr);
             String hexStr = DecimalToFloat.convertSPToHexString(binaryDigits);
             spHexTextField.setText(hexStr);
-        
         }
         catch (Exception exp)
         {
-            
+            JOptionPane.showMessageDialog(null,  exp.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_spDecToFloatButtonActionPerformed
+
+    private void spFloatToDecButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_spFloatToDecButtonActionPerformed
+    {//GEN-HEADEREND:event_spFloatToDecButtonActionPerformed
+        try
+        {
+            String binaryStr =  spTextField.getText();
+        }
+        catch (Exception exp)
+        {
+            JOptionPane.showMessageDialog(null,  exp.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_spFloatToDecButtonActionPerformed
 
     /**
      * @param args the command line arguments
