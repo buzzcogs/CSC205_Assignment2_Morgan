@@ -96,7 +96,9 @@ public class DecimalToFloat
       
       public static int convertStringToSP(String spStrVal)
       {
+          //int retVal = Integer.parseInt(spStrVal, 2);
           int retVal = Integer.parseInt(spStrVal, 2);
+          
           return retVal;
       }
       
@@ -143,5 +145,17 @@ public class DecimalToFloat
         System.out.println(binDigStr);
         String hexStr = DecimalToFloat.convertSPToHexString(binaryDigits);
         System.out.println(hexStr);
+        
+        String binaryStr ="00110101011100001110101010101011";
+        int binDig = DecimalToFloat.convertStringToSP(binaryStr);
+        float myFloat = Float.intBitsToFloat(binDig);
+        float spVal = DecimalToFloat.convertSPToFloat(binDig);
+        String floatStr = DecimalToFloat.convertFloatToString(spVal);
+        System.out.println("binDig: "+binDig);
+        System.out.println("spVal: "+spVal);
+        System.out.println("myFloat: "+spVal);
+        String hexaStr = DecimalToFloat.convertSPToHexString(binDig);
+        System.out.println("hexastr: "+hexaStr);       
+        
       }
 }
