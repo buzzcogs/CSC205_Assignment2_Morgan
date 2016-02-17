@@ -253,6 +253,8 @@ public class DecimalToFloatUI extends javax.swing.JFrame
             String binaryStr =  spTextField.getText();
             int binaryDigits = DecimalToFloat.convertStringToSP(binaryStr);
             float floatVal = DecimalToFloat.convertSPToFloat(binaryDigits);
+            String floatStr = DecimalToFloat.convertFloatToString(floatVal);
+            spDecimalTextField.setText(floatStr);
         }
         catch (Exception exp)
         {

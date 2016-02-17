@@ -26,7 +26,19 @@ public class DecimalToFloat
      
      public static String convertSPBinaryIntsToString(int spVal)
      {
-         String retVal = Integer.toString(spVal, 2);
+        String strBinary = Integer.toBinaryString(spVal);
+        int zeropad = 0;
+        if ( strBinary.length() < 32)
+        {
+            zeropad = 32 - strBinary.length();
+        }
+        String zeroStr = "";
+        for (int i = 0; i < zeropad; i++)
+        {
+            zeroStr = zeroStr +"0";
+        }
+         //Integer.toString(spVal, 2)
+         String retVal = zeroStr+strBinary;
          return retVal;
      }
      
@@ -100,14 +112,36 @@ public class DecimalToFloat
           return doubleVal;
       }
       
+      public static String convertFloatToString(float decimalVal)
+      {
+          String retVal = Float.toString(decimalVal);
+          return retVal;
+      }
+      
       public static void main(String args [])
       {
-        String decVal = "3.78";
+        String decVal = "-3.78";
         float floatVal = DecimalToFloat.convertStringToFloat(decVal);
         System.out.println("float val: "+floatVal);
+       
         int binaryDigits = DecimalToFloat.convertSPToBinaryInts(floatVal);
+        String strBinary = Integer.toBinaryString(binaryDigits);
+        int zeropad = 0;
+        if ( strBinary.length() < 32)
+        {
+            zeropad = 32 - strBinary.length();
+        }
+        String zeroStr = "";
+        for (int i = 0; i < zeropad; i++)
+        {
+            zeroStr = zeroStr +"0";
+        }
+        
         System.out.println("binary digits: "+binaryDigits);
+        System.out.println(zeroStr+strBinary);
         String binDigStr = DecimalToFloat.convertSPBinaryIntsToString(binaryDigits);
-        String hexStr = DecimalToFloat.convertSPToHexString(binaryDigits);            
+        System.out.println(binDigStr);
+        String hexStr = DecimalToFloat.convertSPToHexString(binaryDigits);
+        System.out.println(hexStr);
       }
 }
