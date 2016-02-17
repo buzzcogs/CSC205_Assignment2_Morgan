@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package csc205.assignment2.morgan.gui;
+import csc205.assignment2.morgan.utils.DecimalToFloat;
 
 /**
  *
@@ -51,6 +52,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CSC 205 Binary to Float Converter");
 
         DecimalToFloatTabbedPane.setToolTipText("convert decimal to single precision");
 
@@ -64,6 +66,13 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         });
 
         spDecToFloatButton.setLabel("DecimalToFloat");
+        spDecToFloatButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                spDecToFloatButtonActionPerformed(evt);
+            }
+        });
 
         spFloatToDecButton.setText("FloatToDecimal");
 
@@ -210,6 +219,25 @@ public class DecimalToFloatUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_dpDecimalTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dpDecimalTextFieldActionPerformed
+
+    private void spDecToFloatButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_spDecToFloatButtonActionPerformed
+    {//GEN-HEADEREND:event_spDecToFloatButtonActionPerformed
+        try
+        {
+            String decVal = spDecimalTextField.getText();
+            float floatVal = DecimalToFloat.convertStringToFloat(decVal);
+            int binaryDigits = DecimalToFloat.convertSPToBinaryInts(floatVal);
+            String binDigStr = DecimalToFloat.convertSPBinaryIntsToString(binaryDigits);
+            spTextField.setText(binDigStr);
+            String hexStr = DecimalToFloat.convertSPToHexString(binaryDigits);
+            spHexTextField.setText(hexStr);
+        
+        }
+        catch (Exception exp)
+        {
+            
+        }
+    }//GEN-LAST:event_spDecToFloatButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -14,13 +14,13 @@ public class DecimalToFloat
 {
      public static float convertStringToFloat(String strVal)
      {
-         float retVal = 5.45f;
+         float retVal = Float.parseFloat(strVal);
          return retVal;
      }
      
      public static double convertStringToDouble(String strVal)
      {
-         double retVal = 5.67d;
+         double retVal = Double.parseDouble(strVal);
          return retVal;
      }
      
@@ -48,7 +48,6 @@ public class DecimalToFloat
      
      public static int convertSPToBinaryInts(float floatVal)
      {
-         floatVal=-89.4f;
          int binRetVal = Float.floatToRawIntBits(floatVal);
          return binRetVal;
      }
@@ -69,7 +68,7 @@ public class DecimalToFloat
       
       public static String convertSPToHexString(int binIntVal)
       {
-          binIntVal = 0b01000010100010110100001010001011;
+         // binIntVal = 0b01000010100010110100001010001011;
           String hexVal = Integer.toHexString(binIntVal);
           return hexVal;
       }
