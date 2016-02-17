@@ -24,7 +24,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
         initComponents();
        // ImageIcon image = new ImageIcon("/images/Compass-Rose-BW-300px.png");
        // this.setIconImage(image.getImage());
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage("/images/Compass-Rose-BW-300px.png"));
+       // this.setIconImage(Toolkit.getDefaultToolkit().getImage("/images/Compass-Rose-BW-300px.png"));
     }
 
     /**
@@ -61,6 +61,7 @@ public class DecimalToFloatUI extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CSC 205 Binary to Float Converter");
+        setIconImages(null);
 
         DecimalToFloatTabbedPane.setToolTipText("convert decimal to single precision");
 
