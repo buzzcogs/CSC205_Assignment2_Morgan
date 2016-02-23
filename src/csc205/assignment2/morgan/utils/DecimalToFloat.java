@@ -46,9 +46,9 @@ public class DecimalToFloat
      {
         String strBinary = Long.toBinaryString(dpVal);
         int zeropad = 0;
-        if ( strBinary.length() < 32)
+        if ( strBinary.length() < 64)
         {
-            zeropad = 32 - strBinary.length();
+            zeropad = 64 - strBinary.length();
         }
         String zeroStr = "";
         for (int i = 0; i < zeropad; i++)
